@@ -117,3 +117,16 @@ li {
     height: 15px;
     background-color: #ccc;
 }
+
+.sou {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    background-color: pink;
+    /* 二倍雪碧图做法 */
+    /* 在firework里面把雪碧图等比例缩放到原来的一半,根据大小测量坐标,注意代码里面background-size也要写：雪碧图为原来宽度一半 */
+    background: url(../images//jd-sprites.png) no-repeat -81px 0;
+    background-size: 200px auto;
+}
