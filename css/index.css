@@ -8,7 +8,17 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.5;
     color: #666;
-    background: #eee;
+    /* background: #eee; */
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+img {
+    /* 图片默认是bottom */
+    vertical-align: top;
 }
 
 li {
@@ -19,6 +29,10 @@ li {
 
 .app {
     height: 45px;
+}
+
+.app img {
+    vertical-align: middle;
 }
 
 .app ul li {
@@ -57,8 +71,11 @@ li {
 
 .search-wrap {
     height: 44px;
-    position: relative;
+    position: fixed;
     overflow: hidden;
+    min-width: 320px;
+    max-width: 640px;
+    width: 100%;
 }
 
 .search-btn {
@@ -129,4 +146,77 @@ li {
     /* 在firework里面把雪碧图等比例缩放到原来的一半,根据大小测量坐标,注意代码里面background-size也要写：雪碧图为原来宽度一半 */
     background: url(../images//jd-sprites.png) no-repeat -81px 0;
     background-size: 200px auto;
+}
+
+.slider img {
+    width: 100%;
+}
+
+
+/* 品牌日 */
+
+.brand {
+    overflow: hidden;
+    border-radius: 10px 0;
+}
+
+.brand div {
+    width: 33.333%;
+    float: left;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+
+/* nav */
+
+nav {
+    padding-top: 5px;
+}
+
+nav a {
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px 0;
+}
+
+nav a span {
+    display: block;
+}
+
+
+/* news */
+
+.news {
+    margin-top: 20px;
+}
+
+.news img {
+    width: 100%;
+}
+
+.news a {
+    float: left;
+    box-sizing: border-box;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+.news a:nth-child(2) {
+    width: 25%;
+    border-left: 1px solid #ccc;
+}
+
+.news a:nth-child(3) {
+    width: 25%;
+    border-left: 1px solid #ccc;
 }
