@@ -1,0 +1,10 @@
+.headr {
+  width: 200px;
+}
+.headr a {
+  color: red;
+}
+.headr::after {
+  display: block;
+  content: ' ';
+}
