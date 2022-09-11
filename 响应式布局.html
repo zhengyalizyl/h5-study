@@ -5,17 +5,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>响应式导航栏</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
         .container {
             height: 150px;
             background-color: pink;
             margin: 0 auto;
         }
-        /* 超小屏幕（手机，小于768px）：设置宽度为100%
-   小屏设备（平板，大于等于768px）：设置宽度为750px
-   中等屏幕（桌面显示器，大于等于992px）：设置宽度为970px
-   宽屏设备（大桌面显示器，大于等于1200px）：设置宽度为1170px */
+        /* 超小屏幕（手机，小于768px）：设置宽度为100% */
+        
+        @media screen and(max-width:767px) {
+            .container {
+                width: 100%;
+            }
+        }
+        /* 小屏设备（平板，大于等于768px）：设置宽度为750px */
+        
+        @media screen and (min-width:768px) {
+            .container {
+                width: 750px;
+            }
+        }
+        /* 中等屏幕（桌面显示器，大于等于992px）：设置宽度为970px  */
+        
+        @media screen and (min-width:992px) {
+            .container {
+                width: 970px;
+            }
+        }
+        /* 宽屏设备（大桌面显示器，大于等于1200px）：设置宽度为1170px  */
+        
+        @media screen and (min-width:1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+        
+        .con {
+            width: 750px;
+            margin: 0 auto;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .con ul li {
+            width: 93.75px;
+            height: 30px;
+            background-color: green;
+            float: left;
+        }
+        
+        @media screen and (max-width:767px) {
+            .con {
+                width: 100%;
+            }
+            .con ul li {
+                width: 33.33%;
+            }
+        }
     </style>
 </head>
 
@@ -23,6 +77,20 @@
 <body>
     <!-- 响应式开发里面，首先要做一个布局容器 -->
     <div class="container"></div>
+    <div class="con">
+        <ul>
+            <li>导航栏1</li>
+            <li>导航栏2</li>
+            <li>导航栏3</li>
+            <li>导航栏4</li>
+            <li>导航栏5</li>
+            <li>导航栏6</li>
+            <li>导航栏7</li>
+            <li>导航栏8</li>
+
+
+        </ul>
+    </div>
 </body>
 
 </html>
