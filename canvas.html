@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+</head>
+
+<body>
+    <canvas width="500" height="500">
+
+    </canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const context = canvas.getContext('2d');
+        context.beginPath(); //开启新的绘制路径
+        context.moveTo(10, 10); //画笔移动到某个位置准备绘制x ,y
+        context.lineTo(300, 200); //画一条线的结束坐标
+        context.strokeStyle = 'red';
+        context.stroke(); //绘制线条，把路径描边
+        context.fillStyle = 'green';
+        context.fillText('我是canvas', 300, 100);
+        context.closePath(); //结束路径
+
+        context.beginPath();
+        context.arc(100, 300, 40, 0, Math.PI / 2, false); //true为顺时针，false为逆时针
+        context.stroke();
+        context.fill();
+        context.fillStyle = 'green';
+        context.closePath();
+    </script>
+</body>
+
+</html>
