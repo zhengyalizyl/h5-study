@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-移动泡泡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        canvas {
+            background: black
+        }
+    </style>
+</head>
+
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const context = canvas.getContext('2d');
+        const particles = [];
+        init();
+        window.addEventListener('resize', resize, false);
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+
+        function init() {
+            resize();
+        }
+        const COLOURS = ["#69d2e7", "#a7dbd8", "#e0e4cc", "#f38630", "#fa6900", "#ff4e50", "#f9d423"];
+
+
+        canvas.addEventListener('mousemove', function(e) {
+            // context.clearRect(0, 0, canvas.width, canvas.height); //清除画布
+            const ex = e.clientX;
+            const ey = e.clientY;
+            // //重新开启路径防止粘黏
+            // context.beginPath();
+            // context.fillStyle = random(COLOURS);
+            // context.arc(ex, ey, random(2, 8), Math.PI * 2, false);
+            // context.fill();
+            for (let i = 0; i < Math.random(2, 10); i += 1) {
+                particles.push(new Particle({
+                    x: ex,
+                    y: ey,
+                    color: random(COLOURS),
+                    r: random(8, 40)
+                }))
+            }
+
+
+            if (particles.length > 200) {
+                particles.shift();
+            }
+        }, false);
+
+        render();
+
+        function render() {
+            context.clearRect(0, 0, canvas.width, canvas.height)
+            particles.forEach(particle => particle.upadte())
+            requestAnimationFrame(render);
+        }
+
+
+        function random(min, max) {
+            if (Array.isArray(min)) {
+                return min[~~(Math.random() * min.length)]
+            }
+            return min + ~~(Math.random() * (max - min));
+        }
+
+
+        class Particle {
+            static context = context;
+            constructor({
+                x = 0,
+                y = 0,
+                r = 3,
+                color = "#f9d423",
+            } = {}) {
+                this.init({
+                    x,
+                    y,
+                    r,
+                    color,
+                })
+            }
+            init({
+                x,
+                y,
+                r,
+                color,
+            }) {
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.color = color;
+                this.th = random(0, Math.PI * 2); //初始移动的方向
+                this.vx = Math.sin(this.th) * 4;
+                this.vy = Math.cos(this.th) * 4;
+
+
+            }
+            upadte() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx += Math.cos(this.th) * 0.1;
+                this.vy += Math.sin(this.th) * 0.1;
+                this.vx *= 0.92;
+                this.vy *= 0.92;
+                this.r *= 0.992;
+                this.draw();
+            }
+            draw() {
+                // context.clearRect(0, 0, canvas.width, canvas.height); //清除画布
+                context.beginPath();
+                context.fillStyle = this.color;
+                //开启叠加模式
+                context.globalCompositeOperation = 'lighter';
+                context.arc(this.x, this.y, this.r, Math.PI * 2, false);
+                context.fill();
+            }
+
+        }
+    </script>
+</body>
+
+</html>

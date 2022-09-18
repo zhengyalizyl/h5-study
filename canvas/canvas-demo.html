@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        canvas {
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const context = canvas.getContext('2d');
+
+        init();
+
+        let gradient = context.createLinearGradient(0, 0, 400, 0);
+        gradient.addColorStop(0, 'red');
+        gradient.addColorStop(1, 'green');
+
+        context.beginPath();
+        context.strokeStyle = 'red';
+        context.lineWidth = 3;
+        // context.fillStyle = '#368';
+        context.fillStyle = gradient;
+        context.fillRect(200, 200, 200, 200);
+        context.stroke();
+
+        function init() {
+            resizeView();
+            document.addEventListener('resize', resizeView, false)
+        }
+
+        function resizeView() {
+            const winWidth = window.innerWidth;
+            const winHeight = window.innerHeight;
+            canvas.width = winWidth;
+            canvas.height = winHeight;
+        }
+    </script>
+</body>
+
+</html>
