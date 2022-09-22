@@ -1,3 +1,10 @@
+.jd-page .swiper-pagination-bullet {
+  border-color: #fff;
+  background-color: #fff;
+}
+.jd-page .swiper-paination-bullet-active {
+  background-color: #222;
+}
 a {
   text-decoration: none;
   color: #222;
@@ -20,7 +27,91 @@ img {
 .jd-head {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.jd-search {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 1.33333333vw;
+  box-sizing: border-box;
+  background-color: rgba(122, 0, 0, 0.3);
+  z-index: 2;
+}
+.jd-search_logo {
+  width: 16vw;
+  height: 9.6vw;
+  background-color: red;
+}
+.jd-search_input > input::placeholder {
+  color: #222;
+}
+.jd-search_input > input {
+  width: 69.33333333vw;
+  height: 8vw;
+  line-height: 8vw;
+  border: 0;
+  outline: 0;
+  border-radius: 8vw;
+}
+.jd-search_input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.jd-icon_search {
+  width: 5.33333333vw;
+  height: 5.33333333vw;
+  position: absolute;
+  left: 8px;
+}
+.jd-search_login {
+  color: #fff;
+}
+.jd-banner {
+  width: 100%;
+}
+.jd-banner img {
+  width: 100%;
+}
+.jd-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  background-color: #fff;
+  padding: 2.66666667vw 0;
+  height: 40vw;
+  box-sizing: border-box;
+  align-content: space-between;
+}
+.jd-nav_item {
+  width: 24.8vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 17.6vw;
+}
+.jd-nav_icon {
+  width: 10.66666667vw;
+  height: 10.66666667vw;
+}
+.jd-nav_title {
+  padding-top: 0.53333333vw;
+  font-size: 1.33333333vw;
 }

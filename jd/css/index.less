@@ -1,15 +1,30 @@
+@vw_design: 750;
+@vw_fontsize: 75;
+// @vw(@px){
+//   @px / @vw_design * 100vw;
+// }
 
-@vw_design:750;
-@vw_fontsize:75;
-@vw(@px){
-  @px / @vw_design * 100vw;
+.fontSize(@px) {
+    font-size: @px / @vw_design * 100vw;
 }
 
-@rem(@px){
-  return (@px / @vw_fontsize ) *1rem;
+
+// @rem(@px){
+//   (@px / @vw_fontsize ) *1rem;
+// }
+
+
+.jd-page .swiper-pagination-bullet{
+    border-color:#fff;
+  background-color:#fff;
 }
 
-.flex-box(@direction: row, @wrap: wrap,@jus:space-around,@items:center) {
+.jd-page .swiper-paination-bullet-active{
+  background-color:#222;
+}
+
+
+.flex-box(@direction: row, @wrap: wrap, @jus: space-around, @items: center) {
     display: flex;
     flex-direction: @direction;
     flex-wrap: @wrap;
@@ -40,7 +55,93 @@ img {
     width: 100%;
     overflow: hidden;
 }
+
 // header
-.jd-head{
-    .flex-box(column,nowrap,flex-start,center)
+.jd-head {
+    .flex-box(column, nowrap, flex-start, center);
+    width: 100%;
+}
+
+.jd-search {
+    position: fixed;
+    .flex-box(row, nowrap, space-around, center);
+    width: 100%;
+    padding: (10 / @vw_design * 100vw);
+    box-sizing: border-box;
+    background-color: rgba(122, 0, 0, 0.3);
+    z-index:2;
+}
+
+.jd-search_logo {
+    width: (120 / @vw_design * 100vw);
+    height: (72 / @vw_design * 100vw);
+    background-color: red;
+}
+
+.jd-search_input>input::placeholder{
+   color:#222;
+}
+.jd-search_input>input{
+    width: (520 / @vw_design * 100vw);
+    height: (60 / @vw_design * 100vw);
+    line-height: (60 / @vw_design * 100vw);
+    border: 0;
+    outline: 0;
+    border-radius: (60 / @vw_design * 100vw);
+}
+.jd-search_input{
+  position: relative;
+  .flex-box(row, nowrap, flex-start,center)
+}
+
+.jd-icon_search {
+    width: (40 / @vw_design * 100vw);
+    height: (40/ @vw_design * 100vw);
+    position: absolute;
+    left:8px;
+}
+
+.jd-search_login {
+    color: #fff;
+}
+
+
+
+// banner
+
+.jd-banner{
+    width:100%;
+}
+.jd-banner img{
+    width:100%;
+}
+
+// nav
+
+.jd-nav{
+    width:100%;
+    .flex-box(row, wrap, space-around,center );
+    background-color:#fff;
+    padding:(20 / @vw_design * 100vw) 0;
+    height:(300 / @vw_design * 100vw);
+    box-sizing:border-box;
+    align-content: space-between;
+}
+
+.jd-nav_item{
+    width: (186 / @vw_design * 100vw);
+    text-align: center;
+    .flex-box(column, nowrap, flex-start, center);
+    height: (132 / @vw_design * 100vw);
+}
+
+.jd-nav_icon{
+   width: (80 / @vw_design * 100vw);
+   height: (80 / @vw_design * 100vw);
+
+}
+
+.jd-nav_title{
+    padding-top: (4 / @vw_design * 100vw);
+    font-size: (10/ @vw_design * 100vw);
 }
