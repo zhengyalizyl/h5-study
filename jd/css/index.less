@@ -1,0 +1,46 @@
+
+@vw_design:750;
+@vw_fontsize:75;
+@vw(@px){
+  @px / @vw_design * 100vw;
+}
+
+@rem(@px){
+  return (@px / @vw_fontsize ) *1rem;
+}
+
+.flex-box(@direction: row, @wrap: wrap,@jus:space-around,@items:center) {
+    display: flex;
+    flex-direction: @direction;
+    flex-wrap: @wrap;
+    justify-content: @jus;
+    align-items: @items;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+h1 {
+    font-size: 0;
+}
+
+img {
+    display: block;
+    outline: 0;
+    border: 0;
+}
+
+
+.jd-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+// header
+.jd-head{
+    .flex-box(column,nowrap,flex-start,center)
+}

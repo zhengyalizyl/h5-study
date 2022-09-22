@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+  color: #222;
+}
+h1 {
+  font-size: 0;
+}
+img {
+  display: block;
+  outline: 0;
+  border: 0;
+}
+.jd-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.jd-head {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
