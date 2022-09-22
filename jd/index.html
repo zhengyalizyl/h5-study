@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>京东</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.js"></script>
+</head>
+
+<body>
+    <div class="jd-page">
+        <header class="jd-head">
+            <a href="#">
+                <h1 class="jd-serach_logo">京东商城</h1>
+            </a>
+            <div class="jd-banner">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">slider1</div>
+                        <div class="swiper-slide">slider2</div>
+                        <div class="swiper-slide">slider3</div>
+                    </div>
+                </div>
+            </div>
+            <nav class="jd-nav">
+                <a href="javascript:;">
+                    <img src="upload/nav1.webp" />
+                    <span>京东超市</span>
+                </a>
+                <a href="javascript:;">
+                    <img src="upload/nav2.webp" />
+                    <span>京东超市</span>
+                </a>
+                <a href="javascript:;">
+                    <img src="upload/nav3.webp" />
+                    <span>京东超市</span>
+                </a>
+                <a href="javascript:;">
+                    <img src="upload/nav1.webp" />
+                    <span>京东超市</span>
+                </a>
+                <a href="javascript:;">
+                    <img src="upload/nav1.webp" />
+                    <span>京东超市</span>
+                </a>
+                <a href="javascript:;">
+                    <img src="upload/nav1.webp" />
+                    <span>京东超市</span>
+                </a>
+                <a href="javascript:;">
+                    <img src="upload/nav1.webp" />
+                    <span>京东超市</span>
+                </a>
+                <a href="javascript:;">
+                    <img src="upload/nav1.webp" />
+                    <span>京东超市</span>
+                </a>
+            </nav>
+        </header>
+        <main class="jd-main">
+            <section class="jd-seckill">
+                <div class="jd-head-more"></div>
+                <div class="jd-scroll-list"></div>
+            </section>
+            <section class="jd-product">
+                <h3 class="jd-product_title">京东自营</h3>
+                <div class="jd-product_content">
+                    <div class="jd-product_item">
+                        <a href="javascript:;"><img src="upload/pic1.dpg" alt="" /></a>
+                    </div>
+                    <div class="jd-product_item">
+                        <a href="javascript:;"><img src="upload/pic1.dpg" alt="" /></a>
+                    </div>
+                </div>
+            </section>
+            <section class="jd-seckill"></section>
+            <section class="jd-seckill"></section>
+        </main>
+    </div>
+
+    <script>
+        var mySwiper = new Swiper(".swiper", {
+            autoplay: true, //可选选项，自动滑动
+        });
+
+        //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
+        new Swiper(".swiper");
+        var mySwiper = document.querySelector(".swiper").swiper;
+        mySwiper.slideNext();
+    </script>
+</body>
+
+</html>
