@@ -1,11 +1,15 @@
 @vw_design: 750;
 @vw_fontsize: 75;
+
+@font_name_color:#d8505c;
+@border_color:#ccc;
+
 // @vw(@px){
 //   @px / @vw_design * 100vw;
 // }
 
 .fontSize(@px) {
-    font-size: @px / @vw_design * 100vw;
+    font-size: (@px / @vw_design) * 100vw;
 }
 
 
@@ -157,4 +161,161 @@ img {
 
 .jd-seckill{
     width:100%;
+    box-shadow:0 0 1px #ccc;
+    box-sizing:border-box;
+    padding:0 (10 / @vw_design * 100vw);
+    background-color:#fff;
+}
+
+
+.jd-title-more{
+    .flex-box(row, nowrap, space-between,center);
+    width: 100%;
+    height: (68 / @vw_design * 100vw);
+    padding:0 (10 / @vw_design * 100vw) ;
+    box-sizing:border-box;
+}
+
+.jd-title-more_icon{
+    width:(32 / @vw_design * 100vw);
+    height: (40 / @vw_design * 100vw);
+    margin-right: (16/ @vw_design * 100vw);
+}
+.jd-titile-more_left{
+    .flex-box(row, nowrap, flex-start,center);
+}
+
+.jd-title-more_name{
+    .fontSize(10);
+    color:@font_name_color;
+    padding:0 (20/ @vw_design * 100vw);
+}
+
+.jd-title-block{
+    .fontSize(10);
+    .flex-box(row, nowrap, space-around,center);
+    width:(242/ @vw_design * 100vw);
+}
+
+.jd-time-block_item{
+    color:#fff;
+    padding:2px 4px;
+    background-color:#000;
+    margin-left:2px;
+}
+
+.jd-time_colon{
+   .fontSize(8);
+    white-space:0;
+    letter-spacing:0;
+    padding:0 2px;
+    max-width: 4px;
+}
+
+.jd-title-more_jump{
+    .fontSize(10);
+    color:#222;
+}
+
+.jd-scroll-list{
+    .flex-box(row, nowrap, space-around,center);
+    padding:(5 / @vw_design * 100vw);
+
+}
+.jd-croll-list_item{
+    padding: 0 (40/ @vw_design * 100vw);
+    .flex-box(row, nowrap, space-between,center);
+    .fontSize(10);
+    color:#222;
+}
+
+.jd-scroll-list_pic{
+    width:100%;
+}
+
+.jd-scroll-list_price{
+    color:@font_name_color;
+}
+
+.jd-scroll-list_del-price{
+    line-height: 10px;;
+}
+
+
+
+.jd-product{
+    width:100%;
+    box-shadow:0 0 1px #ccc;
+    box-sizing:border-box;
+    margin-top:(10 / @vw_design * 100vw);
+    background-color:#fff;
+
+}
+
+.jd-product_title{
+    padding:(4 / @vw_design * 100vw) (10 / @vw_design * 100vw) ;
+    width: 100%;
+    font-weight: 400;
+    .fontSize(16);
+    .flex-box(row, nowrap, flex-start,center);
+    position: relative;;
+    box-sizing:border-box;
+}
+
+.jd-product_title::before{
+    content:'';
+    display: block;
+    width:(4 / @vw_design * 100vw);
+    height: (16 / @vw_design * 100vw);
+    margin-right:(8 / @vw_design * 100vw);
+    background-color:@font_name_color;
+}
+.jd-product_title::after{
+    content:'';
+    left:0;
+    width:100%;
+    height: 1px;
+    position:absolute;
+    bottom:0;
+    transform: scaleY(0.5);
+    background-color:@border_color;
+}
+
+.jd-product_content{
+    .flex-box(row, nowrap, flex-start,flex-start);
+}
+
+.jd-product_item{
+    .flex-box(column, nowrap, flex-start,center);
+    position: relative;
+    width:50%;
+    flex:1;
+
+}
+
+.jd-product_item.border-right{
+    border-right: 1px solid @border_color;
+}
+.jd-product_content::after{
+    border-right: 1px solid @border_color;
+    position: absolute;
+    content:'';
+    left:50%;
+    width:1px;
+    height: 100%;
+    transform: translate(-50%,0);
+
+}
+.jd-product_item img{
+   width: 100%;
+}
+
+.jd-product_item--top{
+        // border-right: 1px solid @border_color;
+        border-bottom: 1px solid @border_color;
+
+}
+
+.jd-product_item--bottom{
+    
 }
