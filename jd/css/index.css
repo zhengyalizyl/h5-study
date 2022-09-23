@@ -96,6 +96,7 @@ img {
   height: 40vw;
   box-sizing: border-box;
   align-content: space-between;
+  box-shadow: 0px -1px 2px #ccc;
 }
 .jd-nav_item {
   width: 24.8vw;
@@ -114,4 +115,12 @@ img {
 .jd-nav_title {
   padding-top: 0.53333333vw;
   font-size: 1.33333333vw;
+}
+.jd-main {
+  box-sizing: border-box;
+  position: relative;
+  padding: 1.33333333vw 1.33333333vw 0;
+}
+.jd-seckill {
+  width: 100%;
 }
